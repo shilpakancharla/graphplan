@@ -1,0 +1,31 @@
+InitialState [-PacketAt(A),+CarAt(B),-CarAt(A),-PacketInCar]
+
+GoalState [+PacketAt(B),+CarAt(A)]
+
+Act [LoadA]
+Precondition [+PacketAt(A),-PacketInCar,+CarAt(A)]
+Effect [+PacketInCar,-PacketAt(A)]
+
+Act [LoadB]
+Precondition [+PacketAt(B),-PacketInCar,+CarAt(B)]
+Effect [+PacketInCar,-PacketAt(B)]
+
+Act [DriveAB]
+Precondition [+CarAt(A),-CarAt(B)]
+Effect [+CarAt(B),-CarAt(A)]
+
+Act [DriveBA]
+Precondition [+CarAt(B),-CarAt(A)]
+Effect [+CarAt(A),-CarAt(B)]
+
+Act [ProduceA]
+Precondition [-PacketAt(A)]
+Effect [+PacketAt(A)]
+
+Act [DischargeA]
+Precondition [+CarAt(A),+PacketInCar]
+Effect [+PacketAt(A),-PacketInCar]
+
+Act [DischargeB]
+Precondition [+CarAt(B),+PacketInCar]
+Effect [+PacketAt(B),-PacketInCar]

@@ -1,0 +1,15 @@
+InitialState [+Hungry,+CleanTable]
+
+GoalState [-Hungry,+CleanTable,-Dinner]
+
+Act [Cook]
+Preconditions [+CleanTable]
+Effects [+Dinner]
+
+Act [Eat]
+Preconditions [+Dinner,+Hungry]
+Effects [-Hungry,-CleanTable,-Dinner]
+
+Act [Clean]
+Preconditions [-CleanTable]
+Effects [+CleanTable]
